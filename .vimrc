@@ -1,5 +1,5 @@
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle/
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
@@ -7,7 +7,15 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle "Shougo/vimproc"
+NeoBundle "Shougo/vimproc", {
+  \ 'build' : {
+    \ 'windows' : 'make -f make_mingw32.mak',
+    \ 'cygwin' : 'make -f make_cygwin.mak',
+    \ 'mac' : 'make -f make_mac.mak',
+    \ 'unix' : 'make -f make_unix.mak',
+  \ },
+\ }
+
 NeoBundle "Shougo/vimshell"
 NeoBundle "Shougo/neocomplete"
 NeoBundle "Shougo/neosnippet"
@@ -71,6 +79,8 @@ set whichwrap=b,s,h,l,<,>,[,]
 set mouse=a
 
 set nocompatible
+
+set backspace=indent,eol,start
 
 "let g:quickrun_config = {
 "\   'markdown' : {
