@@ -5,9 +5,6 @@
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
-export AWS_ACCESS_KEY_ID="AKIAJIZZVI2KMHF34GXQ"
-export AWS_SECRET_ACCESS_KEY="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"
-export AWS_REGION=ap-northeast-1
 
 # 色を使用出来るようにする
 autoload -Uz colors
@@ -154,6 +151,7 @@ case ${OSTYPE} in
         #Mac用の設定
         export CLICOLOR=1
         alias ls='ls -G -F'
+        fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
         ;;
     linux*)
         #Linux用の設定
@@ -163,7 +161,6 @@ esac
 
 eval "$(rbenv init -)"
 
-fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 autoload -U compinit
 compinit -u
 
