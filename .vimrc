@@ -1,8 +1,11 @@
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+  if &compatible
+    set nocompatible
+  endif
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -33,6 +36,8 @@ NeoBundle "slim-template/vim-slim"
 NeoBundle "project.tar.gz"
 NeoBundle "altercation/vim-colors-solarized"
 NeoBundle "localvimrc"
+
+call neobundle#end()
 
 filetype on
 filetype plugin on
