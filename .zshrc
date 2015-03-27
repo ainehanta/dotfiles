@@ -192,7 +192,7 @@ case ${OSTYPE} in
         export CLICOLOR=1
         alias ls='ls -G -F'
         fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-        export PATH=/usr/local/bin/vim:$PATH
+        export PATH=/usr/local/bin/:$PATH
         ;;
     linux*)
         #Linux用の設定
