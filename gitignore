@@ -26,3 +26,6 @@ Temporary Items
 
 .idea
 *.iml
+
+.settings
+.pryrc
