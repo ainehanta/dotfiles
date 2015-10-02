@@ -193,6 +193,8 @@ case ${OSTYPE} in
         alias ls='ls -G -F'
         fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
         export PATH=/usr/local/bin/:$PATH
+	export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+	export HOMEBREW_GITHUB_API_TOKEN=fe13170bc05663186fc88a0ca0a525ffd2483fe2
         ;;
     linux*)
         #Linux用の設定
@@ -203,8 +205,20 @@ esac
 autoload -U compinit
 compinit -u
 
-### Added by the Heroku Toolbelt
-#export PATH="/usr/local/heroku/bin:$PATH"
-#eval "$(rbenv init -)"
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+  export RBENV_ROOT=/usr/local/var/rbenv
+fi
+
+if which nodebrew > /dev/null; then
+  export PATH=$NODEBREW_ROOT/current/bin:$PATH
+  export NODEBREW_ROOT=/usr/local/var/nodebrew
+fi
+
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)"
+  export PYENV_ROOT=/usr/local/var/pyenv
+  export PATH=/usr/local/var/pyenv/shims/:$PATH
+fi
 
 source ~/.zshrc.local
