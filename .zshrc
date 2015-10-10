@@ -208,6 +208,7 @@ compinit -u
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
   export RBENV_ROOT=/usr/local/var/rbenv
+  export PATH=$RBENV_ROOT/shims:$PATH
 fi
 
 if which nodebrew > /dev/null; then
