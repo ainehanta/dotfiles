@@ -207,19 +207,16 @@ compinit -u
 
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
-  export RBENV_ROOT=/usr/local/var/rbenv
-  export PATH=$RBENV_ROOT/shims:$PATH
+  #export PATH=$HOME/.rbenv/shims:$PATH
 fi
 
 if which nodebrew > /dev/null; then
-  export PATH=$NODEBREW_ROOT/current/bin:$PATH
-  export NODEBREW_ROOT=/usr/local/var/nodebrew
+  export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
 
 if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
-  export PYENV_ROOT=/usr/local/var/pyenv
-  export PATH=/usr/local/var/pyenv/shims/:$PATH
+  #export PATH=$HOME/.pyenv/shims/:$PATH
 fi
 
 source ~/.zshrc.local

@@ -25,17 +25,6 @@ NeoBundle 'flazz/vim-colorschemes'
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
-" Required:
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
-
 NeoBundle "Shougo/vimproc", {
   \ 'build' : {
     \ 'windows' : 'make -f make_mingw32.mak',
@@ -45,9 +34,7 @@ NeoBundle "Shougo/vimproc", {
   \ },
 \ }
 
-NeoBundle "Shougo/vimshell"
 NeoBundle "Shougo/neocomplete"
-NeoBundle "Shougo/neosnippet"
 NeoBundle "Shougo/unite.vim"
 NeoBundle "mattn/emmet-vim"
 NeoBundle "hail2u/vim-css3-syntax"
@@ -63,7 +50,17 @@ NeoBundle "project.tar.gz"
 NeoBundle "altercation/vim-colors-solarized"
 NeoBundle "localvimrc"
 
+" Required:
 call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"End NeoBundle Scripts-------------------------
+
 
 filetype on
 filetype plugin on
