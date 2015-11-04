@@ -192,9 +192,10 @@ case ${OSTYPE} in
         export CLICOLOR=1
         alias ls='ls -G -F'
         fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-        export PATH=/usr/local/bin/:$PATH
+        export PATH=/usr/local/bin:$PATH
 	export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-	export HOMEBREW_GITHUB_API_TOKEN=fe13170bc05663186fc88a0ca0a525ffd2483fe2
+	export HOMEBREW_GITHUB_API_TOKEN=522615ea4aefe981bfb9a50fcc4f1653fa8f02e9
+	export ANDROID_HOME=/usr/local/opt/android-sdk
         ;;
     linux*)
         #Linux用の設定
@@ -207,7 +208,6 @@ compinit -u
 
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
-  #export PATH=$HOME/.rbenv/shims:$PATH
 fi
 
 if which nodebrew > /dev/null; then
@@ -216,7 +216,6 @@ fi
 
 if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
-  #export PATH=$HOME/.pyenv/shims/:$PATH
 fi
 
 source ~/.zshrc.local
