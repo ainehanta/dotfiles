@@ -205,6 +205,8 @@ case ${OSTYPE} in
         ;;
 esac
 
+export EDITOR="nano"
+
 autoload -U compinit
 compinit -u
 
