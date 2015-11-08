@@ -194,8 +194,10 @@ case ${OSTYPE} in
         fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
         export PATH=/usr/local/bin:$PATH
 	export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-	export HOMEBREW_GITHUB_API_TOKEN=522615ea4aefe981bfb9a50fcc4f1653fa8f02e9
 	export ANDROID_HOME=/usr/local/opt/android-sdk
+	if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  		source $(brew --prefix)/etc/brew-wrap
+	fi
         ;;
     linux*)
         #Linux用の設定

@@ -21,12 +21,11 @@ cask inkscape
 cask intellij-idea
 cask iterm2
 cask java
-cask mactex
+#cask mactex
 cask macwinzipper
 cask mysqlworkbench
 cask nosleep
 cask scroll-reverser
-cask sketch-toolbox
 cask sketch
 cask skim
 cask sourcetree
@@ -48,42 +47,23 @@ cask font-noto-sans
 cask font-noto-serif
 cask font-roboto
 
-## homebrew/dupes
-tap homebrew/dupes
-
 ## rcmdnk/file
 tap rcmdnk/file
 brew brew-file
 
 # Other Homebrew packages
-brew ant
-brew autoconf
 brew docker
 brew docker-machine
 brew ffmpeg
-brew gdbm
 brew git
-brew lame
-brew libusb
-brew libusb-compat
-brew libvo-aacenc
-brew lua
 brew nkf
 brew nodebrew
 brew openssl
-brew pcre
-brew pkg-config
 brew pyenv
-brew python
 brew rbenv
-brew readline
-brew ruby-build
 brew sqlite
 brew vim --with-lua
 brew wget
-brew x264
-brew xvid
-brew xz
 brew zsh
 
 # App Store applications
