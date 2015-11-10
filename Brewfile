@@ -1,3 +1,4 @@
+
 # tap repositories and their packages
 
 ## caskroom/cask
@@ -57,11 +58,19 @@ brew brew-file
 brew autoconf
 brew docker
 brew docker-machine
+brew enscript
 brew ffmpeg
+brew fontconfig
+brew freetype
+brew gd
 brew gdbm
+brew gettext
 brew git
 brew gnuplot --with-aquaterm
+brew jpeg
 brew lame
+brew libpng
+brew libtiff
 brew libvo-aacenc
 brew lua
 brew nkf
@@ -82,6 +91,12 @@ brew xz
 brew zsh
 
 # App Store applications
+appstore Install OS X El Capitan
+appstore Keynote
 appstore LINE
+appstore Numbers
+appstore OneDrive
+appstore Pages
 appstore Slack
+appstore SpriteBuilder
 appstore Xcode

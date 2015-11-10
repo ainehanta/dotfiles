@@ -194,6 +194,7 @@ case ${OSTYPE} in
         fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
         export PATH=/usr/local/bin:$PATH
 	export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+	export HOMEBREW_BREWFILE=~/dotfiles/Brewfile
 	export ANDROID_HOME=/usr/local/opt/android-sdk
 	if [ -f $(brew --prefix)/etc/brew-wrap ];then
   		source $(brew --prefix)/etc/brew-wrap
