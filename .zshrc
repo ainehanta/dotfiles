@@ -34,6 +34,7 @@ zstyle ':zle:*' word-style unspecified
 ########################################
 # 補完
 # 補完機能を有効にする
+fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit
 compinit
 
@@ -193,9 +194,6 @@ case ${OSTYPE} in
         alias ls='ls -G -F'
         fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
         export PATH=/usr/local/bin:$PATH
-	export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-	export HOMEBREW_BREWFILE=~/dotfiles/Brewfile
-	export ANDROID_HOME=/usr/local/opt/android-sdk
 	if [ -f $(brew --prefix)/etc/brew-wrap ];then
   		source $(brew --prefix)/etc/brew-wrap
 	fi
