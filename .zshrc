@@ -36,7 +36,7 @@ zstyle ':zle:*' word-style unspecified
 # 補完機能を有効にする
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit
-compinit
+compinit -C
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -81,11 +81,9 @@ setopt no_flow_control
 # '#' 以降をコメントとして扱う
 setopt interactive_comments
 
-# ディレクトリ名だけでcdする
-setopt auto_cd
-
 # cd したら自動的にpushdする
 setopt auto_pushd
+
 # 重複したディレクトリを追加しない
 setopt pushd_ignore_dups
 
@@ -154,35 +152,14 @@ fi
 # エイリアス
 
 alias la='ls -la'
-
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-
 alias mkdir='mkdir -p'
-
 alias be='bundle exec'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
-
-# グローバルエイリアス
-alias -g L='| less'
-alias -g G='| grep'
-
-# C で標準出力をクリップボードにコピーする
-# mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
-if which pbcopy >/dev/null 2>&1 ; then
-    # Mac
-    alias -g C='| pbcopy'
-elif which xsel >/dev/null 2>&1 ; then
-    # Linux
-    alias -g C='| xsel --input --clipboard'
-elif which putclip >/dev/null 2>&1 ; then
-    # Cygwin
-    alias -g C='| putclip'
-fi
-
 
 
 ########################################
@@ -194,9 +171,6 @@ case ${OSTYPE} in
         alias ls='ls -G -F'
         fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
         export PATH=/usr/local/bin:$PATH
-	if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  		source $(brew --prefix)/etc/brew-wrap
-	fi
         ;;
     linux*)
         #Linux用の設定
@@ -206,8 +180,9 @@ esac
 
 export EDITOR="nano"
 
-autoload -U compinit
-compinit -u
+if [ -e /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
