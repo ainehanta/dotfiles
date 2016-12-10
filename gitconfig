@@ -1,0 +1,16 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#	name = Makoto Uju
+#	email = makoto@makoto-mba.local
+[user]
+	name = Makoto Uju
+	email = ainehanta@hotmail.co.jp
+[core]
+	editor = nano
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[push]
+	default = simple
