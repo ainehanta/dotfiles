@@ -8,6 +8,7 @@
 	email = ainehanta@hotmail.co.jp
 [core]
 	editor = nano
+	excludesfile = /Users/makoto/.gitignore
 [color]
 	diff = auto
 	status = auto
