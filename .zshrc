@@ -193,7 +193,13 @@ if which nodebrew > /dev/null; then
 fi
 
 if which pyenv > /dev/null; then
+  export PYENV_VIRTUALENV_DISABLE_PROMPT=1
   eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
+if which yarn > /dev/null; then
+  export PATH=$PATH:$(yarn global bin)
 fi
 
 source ~/.zshrc.local
